@@ -21,7 +21,7 @@ export function TaskItem({ task, onDeleteTask }) {
         <button title="Finalizar tarefa">
           {isTaskFinished ? <CheckCircle weight="duotone" onClick={handleFinishTask} className={styles.checkCircle} /> : <Circle onClick={handleFinishTask} className={styles.circle} />}
         </button>
-        <p>{task.content}</p>
+        <p className>{task.content}</p>
         <button title="Deletar tarefa">
           <Trash size={24} onClick={handleDeleteTask} />
         </button>

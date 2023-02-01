@@ -6,7 +6,8 @@ import { NoTasks } from './NoTasks';
 
 
 export function Tasks() {
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState([
+       ]);
 
     function deleteTask(taskToDelete) {
         const tasksWithoutDeleteOne = tasks.filter(t => {
