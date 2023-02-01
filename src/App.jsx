@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { NewTaskBar } from './components/NewTaskBar';
 import './global.css';
 import styles from './App.module.css';
+import { Tasks } from './components/Tasks';
 
 export function App() {
 
@@ -10,9 +11,10 @@ export function App() {
   return (
     <div>
       <Header />
-      <div>
-        <NewTaskBar />
-      </div>
+      <main className={styles.wrapper}>
+        <Tasks />
+      </main>
+
     </div>
   )
 }

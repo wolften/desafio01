@@ -1,0 +1,32 @@
+.tasksContainer {
+  padding: 0;
+  width: 736px;
+  top: 291px;
+}
+
+.tasksCountContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.createdTasksCount {
+  color: var(--blue);
+}
+
+.createdTasksCount span {
+  border-radius: 8px;
+  background: var(--gray-400);
+  padding: 2px 8px;
+  color: var(--gray-200);
+}
+
+.finishedTasksCount {
+  color: var(--purple);
+}
+
+.finishedTasksCount span {
+  border-radius: 8px;
+  background: var(--gray-400);
+  padding: 2px 8px;
+  color: var(--gray-200);
+}
