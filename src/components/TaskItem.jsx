@@ -1,31 +1,32 @@
 import styles from './TaskItem.module.css';
 import { Circle, CheckCircle, Trash } from 'phosphor-react';
-import { useState } from 'react';
 
 
-export function TaskItem({ task, onDeleteTask }) {
-
-  const [isTaskFinished, setIsTaskFinished] = useState(false);
+export function TaskItem({ task, onDeleteTask, onUpdateTask }) {
 
   function handleDeleteTask() {
-    onDeleteTask(task.content)
+    onDeleteTask(task)
   }
 
   function handleFinishTask() {
-    setIsTaskFinished(!isTaskFinished);
+    onUpdateTask(task)
   }
 
   return (
-    <div>
       <div className={styles.taskItem}>
-        <button title="Finalizar tarefa">
-          {isTaskFinished ? <CheckCircle weight="duotone" onClick={handleFinishTask} className={styles.checkCircle} /> : <Circle onClick={handleFinishTask} className={styles.circle} />}
-        </button>
-        <p className>{task.content}</p>
-        <button title="Deletar tarefa">
-          <Trash size={24} onClick={handleDeleteTask} />
-        </button>
+        <div>
+          <button title="Finalizar tarefa" onClick={handleFinishTask}>
+            {task.status === 0 ? <CheckCircle weight="duotone" className={styles.checkCircle} /> : <Circle className={styles.circle} />}
+          </button>
+        </div>
+        <div>
+          <p className={task.status === 0 && styles.taskItemFinishedText}>{task.content}</p>
+        </div>
+        <div>
+          <button title="Deletar tarefa" onClick={handleDeleteTask}>
+            <Trash size={24} />
+          </button>
+        </div>
       </div>
-    </div>
   )
 }

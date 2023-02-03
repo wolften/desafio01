@@ -10,13 +10,8 @@ export function NewTaskBar({ tasks, setTasks }) {
         event.preventDefault();
 
         const isTasksLengthZero = tasks.length === 0;
-        var newTaskId = null;
+        var newTaskId = isTasksLengthZero ? 1 : tasks[tasks.length - 1].id + 1;
 
-        if (isTasksLengthZero) {
-            var newTaskId = 1;
-        } else {
-            var newTaskId = tasks[tasks.length - 1].id + 1
-        }
         setTasks(taskState => [...taskState, {
             id: newTaskId,
             content: newTaskText,

@@ -20,6 +20,10 @@
   border: 1px solid var(--gray-700);
 }
 
+.newTask input:focus {
+  box-shadow: 0 0 0 2px var(--blue);
+}
+
 .newTask button[type="submit"] {
   background-color: var(--blue-dark);
   border-radius: 8px;
